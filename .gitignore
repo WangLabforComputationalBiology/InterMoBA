@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+build/
+dist/
+
+# Jupyter
+*.ipynb_checkpoints
+
+# 环境和配置
+venv/
+.env
+.env.*
+
+# 日志和数据库
+*.log
+*.sqlite3
+
+# 系统和编辑器文件
+.DS_Store
+.idea/
+.vscode/
+
+# 临时文件夹
+energy_output/tmp/
+energy_output/tmp_beta/
+examples/tmp_beta/
+tmp/
+tmp_beta/
+
+# 其他
+*.bak
