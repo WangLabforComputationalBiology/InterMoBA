@@ -99,7 +99,7 @@ python docking/merge_summary_input.py $DOCK_FOLDER/ligand_reconstructing/stat_co
 ### FAQ
 
 - **Benchmark data and paper results**  
-  Download the required benchmark files from the [InterMoBA Zenodo repository](https://doi.org/10.5281/zenodo.16147492).  
+  Download the required benchmark files from the [InterMoBA Zenodo repository](https://zenodo.org/records/16155738).  
   Extract `benchmark.zip` and `dock_results.zip`; place their contents as instructed in the project structure.
 
 - **Training data**  
