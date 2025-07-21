@@ -103,6 +103,12 @@ python docking/merge_summary_input.py $DOCK_FOLDER/ligand_reconstructing/stat_co
   Extract `benchmark.zip` and `dock_results.zip`; place their contents as instructed in the project structure.
 
 - **Training data**  
-  Obtain the processed training set(PDBbind v2020) from the [PDBBind+ website](https://www.pdbbind-plus.org.cn/).  
+  Obtain the processed training set (PDBbind v2020) from the [PDBBind+ website](https://www.pdbbind-plus.org.cn/).  
   After downloading, place the processed files under `interformer/poses/`.
+
+- **Training and Evaluation Configuration**  
+  - **Training**: Conducted using 4 NVIDIA A10 GPUs.  
+  - **Evaluation**: Conducted using 1 NVIDIA GeForce RTX 3060 GPU.
+
+  
 
