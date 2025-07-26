@@ -59,7 +59,7 @@ examples/
 ├── uff/$PDB_uff.sdf # [initial ligand conformation] foler contains a single ligand conformation minimized by field foce
 ```
 
-Predicting energy functions file. Download checkpoints from [InterMoBA-4766](https://osf.io/a2qgn/?view_only=00ef5cad85d04f8aa00838c9f677957e).
+Predicting energy functions file. Download checkpoints from [InterMoBA repository](https://osf.io/a2qgn/?view_only=00ef5cad85d04f8aa00838c9f677957e).
 
 ```
 DOCK_FOLDER=energy_output
@@ -99,7 +99,7 @@ python docking/merge_summary_input.py $DOCK_FOLDER/ligand_reconstructing/stat_co
 ### FAQ
 
 - **Benchmark data and paper results**  
-  Download the required benchmark files from [InterMoBA-4766](https://osf.io/a2qgn/?view_only=00ef5cad85d04f8aa00838c9f677957e).  
+  Download the required benchmark files from the [InterMoBA repository](https://osf.io/a2qgn/?view_only=00ef5cad85d04f8aa00838c9f677957e).  
   Extract `benchmark.zip` and `dock_results.zip`; place their contents as instructed in the project structure.
 
 - **Training data**  
