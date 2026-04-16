@@ -10,8 +10,8 @@ from rdkit import Chem
 from scipy.spatial.distance import cdist
 from sklearn.metrics import pairwise_distances
 
-from interformer.constant import *
-from interformer.feats.gnina_types.obabel_api import clean_pdb_intersection_code, rm_water_from_pdb
+from constant import *
+from feats.gnina_types.obabel_api import clean_pdb_intersection_code, rm_water_from_pdb
 
 warnings.filterwarnings("ignore", category=FutureWarning)
 
@@ -688,6 +688,19 @@ class PLIPAtomFeaturizer(object):
         # 1. gnina-type, 2. amino-types
         return 1
 
+    def __call__(self, l_atoms, r_atoms):
+        processed_features = []
+        for a in l_atoms:
+            gnina_type = self.obatom_to_smina_type(a)
+            l_feats = [self.atom_types.index(gnina_type)]
+            processed_features.append(l_feats)
+        for i, a in enumerate(r_atoms):
+            gnina_type = self.obatom_to_smina_type(a)
+            r_feats = [self.atom_types.index(gnina_type) + len(self.atom_types)]
+            processed_features.append(r_feats)
+        #
+        processed_features = torch.tensor(processed_features, dtype=torch.float32)
+        return processed_features
 
 
 class PairTypeFeat:
@@ -1196,5 +1209,3 @@ def obabel_ppi_parser(mol_data, node_featurizer, edge_featurizer, debug=False):
         'lens': lens
     }
     return item
-
-torch.serialization.add_safe_globals([PLIPAtomFeaturizer])
