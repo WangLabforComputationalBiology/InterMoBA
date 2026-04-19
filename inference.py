@@ -5,7 +5,7 @@ import shutil
 import torch
 from torch.serialization import add_safe_globals
 
-from interformer_1.feats.gnina_types.gnina_featurizer import Info, PLIPAtomFeaturizer, PLIPEdgeFeaturizer, obabel_mol_parser
+from interformer.feats.gnina_types.gnina_featurizer import Info, PLIPAtomFeaturizer, PLIPEdgeFeaturizer, obabel_mol_parser
 
 
 add_safe_globals([Info, PLIPAtomFeaturizer, PLIPEdgeFeaturizer, obabel_mol_parser])
