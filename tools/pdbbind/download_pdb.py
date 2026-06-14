@@ -13,9 +13,9 @@ def download_pdb(items):
 
 
 if __name__ == '__main__':
-    output_path = '/opt/home/revoli/data_worker/interformer/rebuild_pocket/pdb'
+    output_path = '/opt/home/revoli/data_worker/intermoba/rebuild_pocket/pdb'
     os.makedirs(output_path, exist_ok=True)
     query = [(x.strip(), f'{output_path}/{x.strip()}.pdb') for x in
-             open('/opt/home/revoli/data_worker/interformer/rebuild_pocket/pdb_list').readlines()]
+             open('/opt/home/revoli/data_worker/intermoba/rebuild_pocket/pdb_list').readlines()]
     # we run it in Parallel by using joblib, it is a easy way to go
     joblib.Parallel(n_jobs=70, prefer='threads')(joblib.delayed(download_pdb)(x) for x in tqdm(query))

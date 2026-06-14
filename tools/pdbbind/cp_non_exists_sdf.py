@@ -2,7 +2,7 @@
 import glob
 import os.path
 
-full_set = '/opt/home/revoli/data_worker/interformer/poses/ligand/20240620/pdbbank'
+full_set = '/opt/home/revoli/data_worker/intermoba/poses/ligand/20240620/pdbbank'
 gt_set = '/opt/home/revoli/data_worker/pdbbind/2020/v2020-other-PL/index/pdb/ligand'
 uff_set = '/opt/home/revoli/data_worker/pdbbind/2020/v2020-other-PL/index/pdb/ligand/uff'
 

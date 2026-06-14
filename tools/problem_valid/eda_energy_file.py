@@ -1,7 +1,7 @@
 import pickle
 
 if __name__ == '__main__':
-    root = '/opt/home/revoli/eva/Interformer/energy_output'
+    root = '/opt/home/revoli/eva/intermoba/energy_output'
     pdb = '5S8I'
     data = pickle.load(open(f'{root}/gaussian_predict/{pdb}_G.pkl', 'rb'))
 

@@ -40,7 +40,7 @@ if __name__ == '__main__':
     # folder = ['dock_results/energy_timetest']
     ###
     # Posebuster
-    base = '/home/deng/AA_Temp/I_1/Interformer_e3_moba_2'
+    base = '/home/deng/AA_Temp/I_1/intermoba_e3_moba_2'
     folder = ['dock_results/energy_posebuster']  # energy_posebuster
     ligand_folder = 'ref'  # ref, ligand_reconstructing, posescore
     ##
@@ -84,13 +84,13 @@ if __name__ == '__main__':
                                         ["rmsd_≤_2å"])
         # energy
         df = df[df['pose_rank'] == 0]  # only save the best result
-        df.to_csv('/home/deng/AA_Temp/I_1/Interformer_e3_moba_2/tmp/posebuster_check.csv', index=False)
+        df.to_csv('/home/deng/AA_Temp/I_1/intermoba_e3_moba_2/tmp/posebuster_check.csv', index=False)
         ###
         # Basic Info
-        df = pd.read_csv('/home/deng/AA_Temp/I_1/Interformer_e3_moba_2/tmp/posebuster_check.csv')
+        df = pd.read_csv('/home/deng/AA_Temp/I_1/intermoba_e3_moba_2/tmp/posebuster_check.csv')
         eval(df, check_lists)
         v2_pdbs = [x[:4] for x in open(
-            '/home/deng/AA_Temp/I_1/Interformer_e3_moba_2/interformer/train/diffdock_splits/posebusters_pdb_ccd_ids.txt').readlines()]
+            '/home/deng/AA_Temp/I_1/intermoba_e3_moba_2/intermoba/train/diffdock_splits/posebusters_pdb_ccd_ids.txt').readlines()]
         v2_df = df[df['pdb'].isin(v2_pdbs)].copy()
         eval(v2_df, check_lists, name='v2')
         #

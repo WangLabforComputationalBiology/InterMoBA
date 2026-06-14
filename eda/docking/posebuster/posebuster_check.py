@@ -103,10 +103,10 @@ if __name__ == '__main__':
                                         ["rmsd_≤_2å"])
         # energy
         df = df[df['pose_rank'] == 0]  # only save the best result
-        df.to_csv('/home/wlx/桌面/Interformer_e3_moba_loss/Interformer_e3_moba_loss/tmp/posebuster_check.csv', index=False)
+        df.to_csv('/home/wlx/桌面/intermoba_e3_moba_loss/intermoba_e3_moba_loss/tmp/posebuster_check.csv', index=False)
         ###
         # Basic Info
-        df = pd.read_csv('/home/wlx/桌面/Interformer_e3_moba_loss/Interformer_e3_moba_loss/tmp/posebuster_check.csv')
+        df = pd.read_csv('/home/wlx/桌面/intermoba_e3_moba_loss/intermoba_e3_moba_loss/tmp/posebuster_check.csv')
         df['pdb'] = df['pdb'].str.upper()
         
         # 分析每个检查项的失败情况
@@ -114,7 +114,7 @@ if __name__ == '__main__':
         
         # 原有的评估
         eval(df, check_lists)
-        v2_pdbs = [x[:4].upper() for x in open('/home/wlx/桌面/Interformer_e3_moba_loss/Interformer_e3_moba_loss/interformer/train/diffdock_splits/posebusters_pdb_ccd_ids.txt').readlines()]
+        v2_pdbs = [x[:4].upper() for x in open('/home/wlx/桌面/intermoba_e3_moba_loss/intermoba_e3_moba_loss/intermoba/train/diffdock_splits/posebusters_pdb_ccd_ids.txt').readlines()]
         v2_df = df[df['pdb'].isin(v2_pdbs)].copy()
         eval(v2_df, check_lists, name='v2')
         #

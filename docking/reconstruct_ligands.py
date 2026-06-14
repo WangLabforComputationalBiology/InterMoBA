@@ -713,7 +713,7 @@ def reconstruct_1_ligand_given_paths(
                 weight_collision_inter=weight_collision_inter,
             )
             ####
-            # [Revo] Interformer Input Check
+            # [Revo] intermoba Input Check
             pocket_len = dict_normalscore['pocket_len'][0]
             vdw_pair_shape_0 = dict_normalscore['vdw_pair'].shape[0]
 

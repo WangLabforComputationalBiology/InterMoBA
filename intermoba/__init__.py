@@ -1,0 +1,3 @@
+"""
+intermoba package initialization
+"""

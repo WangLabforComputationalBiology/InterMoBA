@@ -11,7 +11,7 @@ def num_h_atoms(mol):
     return n
 
 
-root_1 = '/opt/home/revoli/data_worker/interformer/poses/ligand/rcsb'
+root_1 = '/opt/home/revoli/data_worker/intermoba/poses/ligand/rcsb'
 pdbbind_root = '/opt/home/revoli/data_worker/pdbbind/2020/sdf/proto'
 
 failed = []

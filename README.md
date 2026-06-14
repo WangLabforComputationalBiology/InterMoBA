@@ -53,7 +53,7 @@ Input data strcutures
 
 ```
 examples/
-├── demo_dock.csv  # the query csv for interformer prediction [Target=PDB, Molecule ID=name in SDF file, pose_rank=the nth molecule in sdf file]
+├── demo_dock.csv  # the query csv for intermoba prediction [Target=PDB, Molecule ID=name in SDF file, pose_rank=the nth molecule in sdf file]
 ├── ligand/$PDB_docked.sdf  # [reference ligand] foler contains the reference ligand conformation from PDB
 ├── pocket/$PDB_pocket.pdb # [binding pocket site] foler contains the target protein PDB structure 
 ├── uff/$PDB_uff.sdf # [initial ligand conformation] foler contains a single ligand conformation minimized by field foce
@@ -64,7 +64,7 @@ Predicting energy functions file. Download checkpoints from [InterMoBA repositor
 ```
 DOCK_FOLDER=energy_output
 
-PYTHONPATH=interformer/ python inference.py -test_csv examples/demo_dock.csv \
+PYTHONPATH=intermoba/ python inference.py -test_csv examples/demo_dock.csv \
 -work_path examples/ \
 -ensemble checkpoints/energy_model \
 -batch_size 1 \
@@ -104,7 +104,7 @@ python docking/merge_summary_input.py $DOCK_FOLDER/ligand_reconstructing/stat_co
 
 - **Training data**  
   Obtain the processed training set (PDBbind v2020) from the [PDBBind+ website](https://www.pdbbind-plus.org.cn/).  
-  After downloading, place the processed files under `interformer/poses/`.
+  After downloading, place the processed files under `intermoba/poses/`.
 
 - **Training and Evaluation Configuration**  
   - **Training**: Conducted using 4 NVIDIA A10 GPUs.  

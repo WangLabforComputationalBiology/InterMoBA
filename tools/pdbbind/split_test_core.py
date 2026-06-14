@@ -3,7 +3,7 @@ import os
 import subprocess
 import pandas as pd
 
-root = '/opt/home/revoli/data_worker/interformer/train'
+root = '/opt/home/revoli/data_worker/intermoba/train'
 input_df = 'general_PL_2020_round0_full.csv'
 df = pd.read_csv(f'{root}/{input_df}')
 test_pdbs = [x.strip() for x in open(root + '/diffdock_splits/timesplit_test').readlines()]
@@ -20,7 +20,7 @@ print(f'Core n:{len(core_df[core_df['pose_rank'] == 0])}')
 full_time = set(test_df['Target'].unique().tolist())
 core_set = set(core_df['Target'].unique().tolist())
 test_pdbs = set(
-    [os.path.basename(x)[:4] for x in glob.glob('/opt/home/revoli/eva/Interformer/energy_timetest/ligand/*')])
+    [os.path.basename(x)[:4] for x in glob.glob('/opt/home/revoli/eva/intermoba/energy_timetest/ligand/*')])
 test_pdbs = test_pdbs - core_set
 print(f'exceeded:{full_time - test_pdbs}, {test_pdbs - full_time}')
 # save csv

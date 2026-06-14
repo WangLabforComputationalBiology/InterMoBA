@@ -3,7 +3,7 @@ WORK_PATH=benchmark/docking/timesplit
 mkdir -p $DOCK_OUTPUT_DIR
 ####
 # Energy Predictions
-PYTHONPATH=interformer/ python inference.py -test_csv $WORK_PATH/core_timetest.csv \
+PYTHONPATH=intermoba/ python inference.py -test_csv $WORK_PATH/core_timetest.csv \
 -work_path $WORK_PATH \
 -ensemble checkpoints/energy_model \
 -gpus 1 \

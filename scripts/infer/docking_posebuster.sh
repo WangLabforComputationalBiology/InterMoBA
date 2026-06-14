@@ -2,7 +2,7 @@ DOCK_FOLDER=dock_results/energy_posebuster
 WORK_PATH=benchmark/docking/posebuster
 mkdir -p DOCK_FOLDER
 ######
-PYTHONPATH=interformer/ python inference.py -test_csv $WORK_PATH/posebuster_infer.csv  \
+PYTHONPATH=intermoba/ python inference.py -test_csv $WORK_PATH/posebuster_infer.csv  \
 -work_path $WORK_PATH \
 -ensemble checkpoints/energy_model \
 -gpus 1 \

@@ -1,7 +1,7 @@
 ###
 # Energy
-PYTHONPATH=interformer/ CUDA_VISIBLE_DEVICES=0,1,2,3 python train.py -data_path interformer/train/general_PL_2020.csv \
--work_path interformer/poses \
+PYTHONPATH=intermoba/ CUDA_VISIBLE_DEVICES=0,1,2,3 python train.py -data_path intermoba/train/general_PL_2020.csv \
+-work_path intermoba/poses \
 -ligand ligand/rcsb \
 -seed 1111 \
 -filter_type normal \

@@ -6,15 +6,15 @@ import torch.distributed as dist
 from pytorch_lightning import loggers as pl_loggers
 from pytorch_lightning.strategies import DDPStrategy
 
-from interformer_1.data.data_process import GraphDataModule
-from interformer_1.utils.cluster import auto_configure_nccl
-from interformer_1.utils.parser import get_args
-from interformer_1.utils.train_utils import load_model, param_count, get_callbacks
+from intermoba.data.data_process import GraphDataModule
+from intermoba.utils.cluster import auto_configure_nccl
+from intermoba.utils.parser import get_args
+from intermoba.utils.train_utils import load_model, param_count, get_callbacks
 
 
 import torch
 from torch.serialization import add_safe_globals
-from interformer_1.feats.gnina_types.gnina_featurizer import Info
+from intermoba.feats.gnina_types.gnina_featurizer import Info
 
 
 add_safe_globals([Info])

@@ -43,7 +43,7 @@ my_port=2345
 export NCCL_IB_DISABLE=1
 export TORCHELASTIC_RESTART_COUNT=0
 echo "# Checking Parameters, HOST_NUM=$HOST_NUM, MASTER_ADD=$CHIEF_IP, my_port=$my_port, HOST_GPU_NUM=$HOST_GPU_NUM, INDEX:$INDEX"
-PYTHONPATH=interformer/ python -m torch.distributed.run --nnodes=$HOST_NUM --node_rank=$INDEX --nproc_per_node=$HOST_GPU_NUM --master_addr=$CHIEF_IP --master_port=$my_port --max_restarts 0 train.py \
+PYTHONPATH=intermoba/ python -m torch.distributed.run --nnodes=$HOST_NUM --node_rank=$INDEX --nproc_per_node=$HOST_GPU_NUM --master_addr=$CHIEF_IP --master_port=$my_port --max_restarts 0 train.py \
 -num_nodes $HOST_NUM -gpus $HOST_GPU_NUM \
 2>&1 >>${MODEL_DIR}/logs/${TJ_INSTANCE_ID}.log
 

@@ -18,8 +18,8 @@ def align(uff_f, ligand_f):
 
 
 if __name__ == "__main__":
-    uff_root = '/opt/home/revoli/eva/Interformer/energy_output/uff'
-    ligand_root = '/opt/home/revoli/eva/Interformer/energy_output/ligand'
+    uff_root = '/opt/home/revoli/eva/intermoba/energy_output/uff'
+    ligand_root = '/opt/home/revoli/eva/intermoba/energy_output/ligand'
     e = 0
     for uff_f in glob.glob(f'{uff_root}/*.sdf'):
         pdb = os.path.basename(uff_f)[:4]

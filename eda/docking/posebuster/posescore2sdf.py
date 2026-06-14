@@ -2,9 +2,9 @@ import pandas as pd
 import os
 from rdkit import Chem
 
-df = pd.read_csv('/opt/home/revoli/eva/Interformer/result/posebuster_infer.round0_ensemble.csv')
-dock_sdf_root = '/opt/home/revoli/eva/Interformer/dock_results/energy_posebuster/ligand_reconstructing'
-output_root = '/opt/home/revoli/eva/Interformer/dock_results/energy_posebuster/posescore'
+df = pd.read_csv('/opt/home/revoli/eva/intermoba/result/posebuster_infer.round0_ensemble.csv')
+dock_sdf_root = '/opt/home/revoli/eva/intermoba/dock_results/energy_posebuster/ligand_reconstructing'
+output_root = '/opt/home/revoli/eva/intermoba/dock_results/energy_posebuster/posescore'
 os.makedirs(output_root, exist_ok=True)
 df = df.sort_values('pred_pose', ascending=False)
 df = df.groupby('Target').head(1)

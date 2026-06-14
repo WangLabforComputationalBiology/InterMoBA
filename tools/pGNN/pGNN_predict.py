@@ -83,7 +83,7 @@ if __name__ == '__main__':
     input_csv = f'{data_dir}/mPro_project.csv'  # lsd1_project, mPro_covalent_test, mPro_project
     ####
     # Core
-    # data_dir = '/opt/home/revoli/data_worker/interformer/poses'
+    # data_dir = '/opt/home/revoli/data_worker/intermoba/poses'
     # input_csv = '/opt/home/revoli/data_worker/paper/benchmark/docking/timesplit/core_timetest.round0.csv'
     #
     output_dir = '/opt/home/revoli/git/pf-gnn_pli/GNNp_regression'

@@ -6,7 +6,7 @@ import pandas as pd
 from rdkit import Chem
 
 if __name__ == '__main__':
-    root = '/opt/home/revoli/data_worker/interformer/poses'
+    root = '/opt/home/revoli/data_worker/intermoba/poses'
     # Mol data
     ligand = list(glob.glob(f'{root}/ligand/*.sdf'))
     output_root = '/opt/home/revoli/git/pf-gnn_pli/GNNp_regression/data_mol_pkl'
@@ -18,14 +18,14 @@ if __name__ == '__main__':
     ####
     # pIC50 data
     output_root = '/opt/home/revoli/git/pf-gnn_pli/GNNp_regression/keys'
-    df = pd.read_csv('/opt/home/revoli/data_worker/interformer/train/general_PL_2020.csv')
+    df = pd.read_csv('/opt/home/revoli/data_worker/intermoba/train/general_PL_2020.csv')
     df = df[['Target', 'pIC50']]
     train_pdb = [x.strip() for x in open(
-        '/opt/home/revoli/data_worker/interformer/train/diffdock_splits/timesplit_no_lig_overlap_train').readlines()]
+        '/opt/home/revoli/data_worker/intermoba/train/diffdock_splits/timesplit_no_lig_overlap_train').readlines()]
     test_pdb = [x.strip() for x in
-                open('/opt/home/revoli/data_worker/interformer/train/diffdock_splits/timesplit_test').readlines()]
+                open('/opt/home/revoli/data_worker/intermoba/train/diffdock_splits/timesplit_test').readlines()]
     coreset = [x.strip() for x in
-               open('/opt/home/revoli/data_worker/interformer/train/diffdock_splits/coresetlist').readlines()]
+               open('/opt/home/revoli/data_worker/intermoba/train/diffdock_splits/coresetlist').readlines()]
     train_pdb = list(set(train_pdb) - set(coreset))
     #
     tmp = df[df['Target'].isin(train_pdb)]

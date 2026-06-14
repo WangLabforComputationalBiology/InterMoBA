@@ -82,10 +82,10 @@ def eval_hit_rate(df, name):
 if __name__ == '__main__':
     pre = 1
     use_pose_score = 0
-    method_name = 'Interformer'  # Interformer, DiffDock, DeepDock
+    method_name = 'intermoba'  # intermoba, DiffDock, DeepDock
     output_folder = 'benchmarks/docking/pose_stats'
     output_name = method_name
-    if method_name == 'Interformer':
+    if method_name == 'intermoba':
         if use_pose_score:
             output_name += '-PoseScore'
         else:
@@ -94,7 +94,7 @@ if __name__ == '__main__':
     print(tmp_f)
     ###
     test_list = [x.strip() for x in
-                 open('interformer/train/diffdock_splits/timesplit_test').readlines()]
+                 open('intermoba/train/diffdock_splits/timesplit_test').readlines()]
     root = ' dock_results/energy_timetest'
     # test_list = ['6hld']
     ###########
@@ -103,7 +103,7 @@ if __name__ == '__main__':
         sdf_id = 0
         ref_id = 0
         # load ranking data
-        if method_name == 'Interformer':
+        if method_name == 'intermoba':
             pose_sel_df = pd.read_csv('benchmarks/docking/timesplit/core_timetest.round0.csv')
         #
         for t in tqdm(test_list):
@@ -112,7 +112,7 @@ if __name__ == '__main__':
             if not os.path.exists(complex_f) or not os.path.exists(gt_sdf_f):
                 continue
             # docked_sdf
-            if method_name == 'Interformer':
+            if method_name == 'intermoba':
                 sdf_f = f'{root}/ligand_reconstructing/{t}_docked.sdf'
                 sdf_id = 0
                 if use_pose_score:
@@ -151,11 +151,11 @@ if __name__ == '__main__':
         df.to_csv(tmp_f, index=False)
         print(df)
     #######
-    ## load  methods = ['DiffDock', 'DeepDock', 'Interformer-PoseScore', 'Interformer-Energy']
-    methods = ['Interformer-Energy']
+    ## load  methods = ['DiffDock', 'DeepDock', 'intermoba-PoseScore', 'intermoba-Energy']
+    methods = ['intermoba-Energy']
     all_df = []
     for method in methods:
-        a = pd.read_csv(f'{output_folder}/{method}_pose2stats.csv')  # tmp test, interformer_pose2stats
+        a = pd.read_csv(f'{output_folder}/{method}_pose2stats.csv')  # tmp test, intermoba_pose2stats
         a['method'] = method
         all_df.append(a)
     df = pd.concat(all_df).reset_index(drop=True)
@@ -170,8 +170,8 @@ if __name__ == '__main__':
         eval_hit_rate(df[df['method'] == method], name=method)
     #####
     # confirmed pdbs
-    # new_df = df[df['method'] == 'Interformer']
-    # w = open('/opt/home/revoli/data_worker/interformer/train/diffdock_splits/timesplit_test_sanitizable', 'w')
+    # new_df = df[df['method'] == 'intermoba']
+    # w = open('/opt/home/revoli/data_worker/intermoba/train/diffdock_splits/timesplit_test_sanitizable', 'w')
     # w.write('\n'.join(new_df['pdb'].unique().tolist()))
     # w.close()
     ###
